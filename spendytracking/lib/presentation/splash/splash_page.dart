@@ -12,7 +12,6 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<SplashBloc>().add(SplashNavigate());
     return BlocListener<SplashBloc, SplashState>(
       listener: (_, state) {
         if (state is SplashNavigateHome) {

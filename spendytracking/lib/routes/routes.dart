@@ -4,6 +4,7 @@ import 'package:spendytracking/core/di.dart';
 import 'package:spendytracking/presentation/home/home_page.dart';
 import 'package:spendytracking/presentation/login/login_page.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_bloc.dart';
+import 'package:spendytracking/presentation/splash/bloc/splash_event.dart';
 import 'package:spendytracking/presentation/splash/splash_page.dart';
 
 
@@ -17,7 +18,7 @@ class AppRoutes {
   static Map<String, Widget Function(BuildContext)> routes = {
     RoutesConstant.init: (_) => BlocProvider(
         create: (BuildContext context) {
-          return kiwiContainer.resolve<SplashBloc>();
+          return kiwiContainer.resolve<SplashBloc>()..add(SplashNavigate());
         },
         child: const SplashPage()),
     RoutesConstant.login: (_) => const LoginPage(),
