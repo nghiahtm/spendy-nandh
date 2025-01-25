@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spendytracking/core/di.dart';
+import 'package:spendytracking/presentation/login/bloc/login_bloc.dart';
+import 'package:spendytracking/presentation/login/bloc/login_event.dart';
+import 'package:spendytracking/presentation/login/bloc/login_state.dart';
+import 'package:spendytracking/routes/routes.dart';
 import 'package:spendytracking/styles/app_button.dart';
 import 'package:spendytracking/styles/app_colors.dart';
 import 'package:spendytracking/styles/app_image.dart';
@@ -14,29 +20,53 @@ class LoginPage extends StatelessWidget {
       backgroundColor: AppColors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Đăng nhập",style: AppTextStyle.titleAppBar,),
+        title: Text(
+          "Đăng nhập",
+          style: AppTextStyle.titleAppBar,
+        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Center(
-            child: AppButton(
-          onPressed: () {},
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Row(
-              children: [
-                const AppImage(img: IconConstant.iconGoogle),
-                const SizedBox(
-                  width: 8,
-                ),
-                Text(
-                  "Đăng nhập bằng Google",
-                  style: AppTextStyle.normal.copyWith(color: AppColors.white),
-                )
-              ],
+      body: BlocListener<LoginBloc, LoginState>(
+        listener: (BuildContext context, LoginState state) {
+          if (state is LoginSuccess) {
+            Navigator.pushNamedAndRemoveUntil(
+                context, RoutesConstant.home, (_) => false);
+            return;
+          }
+          if (state is LoginError) {
+            showDialog(
+                context: context,
+                builder: (_) {
+                  return AlertDialog(
+                    content: Text(state.error),
+                    title: const Text("Error"),
+                  );
+                });
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+              child: AppButton(
+            onPressed: () {
+              kiwiContainer.resolve<LoginBloc>().add(LoginEventGetUser());
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Row(
+                children: [
+                  const AppImage(img: IconConstant.iconGoogle),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    "Đăng nhập bằng Google",
+                    style: AppTextStyle.normal.copyWith(color: AppColors.white),
+                  )
+                ],
+              ),
             ),
-          ),
-        )),
+          )),
+        ),
       ),
     );
   }
