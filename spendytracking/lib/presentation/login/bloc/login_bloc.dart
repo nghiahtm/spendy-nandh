@@ -10,7 +10,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   void onLoginGetUser(LoginEventGetUser event, Emitter<LoginState> emit) async {
-    final result = await authUseCase.checkLoginSuccess();
+    emit(LoginInit());
+    final result = await authUseCase.stateUserLogin();
     if (result != null && result.isNotEmpty) {
       emit(LoginError(error: result));
       return;

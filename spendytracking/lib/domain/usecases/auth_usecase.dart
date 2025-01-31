@@ -10,17 +10,17 @@ class AuthUseCase {
 
   UserModel? userModel;
 
-  Future<UserModel?> getUser()async{
-    final user = await authRepository.login();
-    return userModel = user?.userModel;
-  }
-
-  Future<String?> checkLoginSuccess() async {
+  Future<String?> stateUserLogin() async {
     try {
-      final user = await getUser();
+      final auth = await authRepository.login();
+      if (auth == null){
+        return "Not Log in";
+      }
+      final user = await authRepository.getUser(auth);
       if (user == null) {
         return "Not Found User";
       }
+      userModel = user.userModel;
       return null;
     } on FirebaseException catch (e) {
       return e.message;

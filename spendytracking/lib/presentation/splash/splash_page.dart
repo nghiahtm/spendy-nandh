@@ -16,7 +16,7 @@ class SplashPage extends StatelessWidget {
       listener: (_, state) {
         if (state is SplashNavigateHome) {
           Navigator.pushNamedAndRemoveUntil(
-              context, RoutesConstant.home, (_) => false);
+              context, RoutesConstant.main, (_) => false);
           return;
         }
         if (state is SplashNavigateLogin) {
