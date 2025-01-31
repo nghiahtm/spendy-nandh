@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
         listener: (BuildContext context, LoginState state) {
           if (state is LoginSuccess) {
             Navigator.pushNamedAndRemoveUntil(
-                context, RoutesConstant.home, (_) => false);
+                context, RoutesConstant.main, (_) => false);
             return;
           }
           if (state is LoginError) {
@@ -38,7 +38,7 @@ class LoginPage extends StatelessWidget {
                 builder: (_) {
                   return AlertDialog(
                     content: Text(state.error),
-                    title: const Text("Error"),
+                    title: const Center(child: Text("Error")),
                   );
                 });
           }

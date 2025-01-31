@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spendytracking/core/di.dart';
+import 'package:spendytracking/presentation/home/bloc/home_bloc.dart';
+import 'package:spendytracking/presentation/home/bloc/home_event.dart';
 import 'package:spendytracking/presentation/home/home_page.dart';
 import 'package:spendytracking/presentation/login/bloc/login_bloc.dart';
 import 'package:spendytracking/presentation/login/login_page.dart';
+import 'package:spendytracking/presentation/main/main_page.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_bloc.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_event.dart';
 import 'package:spendytracking/presentation/splash/splash_page.dart';
 
-
-class RoutesConstant{
+class RoutesConstant {
   static const String init = "/";
   static const String login = "/login";
-  static const String home = "/home";
+  static const String main = "/main";
 }
 
 class AppRoutes {
@@ -23,10 +25,15 @@ class AppRoutes {
         },
         child: const SplashPage()),
     RoutesConstant.login: (_) => BlocProvider(
-      create: (_){
-        return kiwiContainer.resolve<LoginBloc>();
-      },
+        create: (_) {
+          return kiwiContainer.resolve<LoginBloc>();
+        },
         child: const LoginPage()),
-    RoutesConstant.home: (_) => const HomePage(),
+    RoutesConstant.main: (_) => MultiBlocProvider(providers: [
+          BlocProvider(
+            create: (_) =>
+                kiwiContainer.resolve<HomeBloc>()..add(HomeEventShowUser()),
+          )
+        ], child: const MainPage()),
   };
 }

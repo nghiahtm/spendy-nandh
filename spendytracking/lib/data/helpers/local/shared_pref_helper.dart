@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class KeySharedPrefHelperConstant{
   static const kUser = "key_user";
 }
+
 class SharedPrefHelper {
   final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
 
@@ -12,5 +13,9 @@ class SharedPrefHelper {
 
   Future<void> setStringUser(String value) async {
     asyncPrefs.setString(KeySharedPrefHelperConstant.kUser,value);
+  }
+
+  Future<void> removeUserId(String value) async {
+    asyncPrefs.remove(KeySharedPrefHelperConstant.kUser);
   }
 }

@@ -8,6 +8,11 @@ class AppTextStyle {
     color: AppColors.white
   );
 
+  static TextStyle heading4 = const TextStyle(
+      fontSize: 22,
+      fontWeight: FontWeight.bold,
+      color: AppColors.white
+  );
   static TextStyle titleAppBar = const TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.bold,
