@@ -32,7 +32,6 @@ class AppBottomAppbar extends StatelessWidget {
                 onTapItem(2);
               },
             ),
-            const SizedBox(width: 40), // The dummy child
             AppItemNavBarWidget(
               title: "Budget",
               svgIcon: IconConstant.icBudget,

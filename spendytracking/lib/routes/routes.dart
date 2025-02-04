@@ -6,6 +6,7 @@ import 'package:spendytracking/presentation/home/bloc/home_event.dart';
 import 'package:spendytracking/presentation/home/home_page.dart';
 import 'package:spendytracking/presentation/login/bloc/login_bloc.dart';
 import 'package:spendytracking/presentation/login/login_page.dart';
+import 'package:spendytracking/presentation/main/bloc/main_bloc.dart';
 import 'package:spendytracking/presentation/main/main_page.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_bloc.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_event.dart';
@@ -30,6 +31,9 @@ class AppRoutes {
         },
         child: const LoginPage()),
     RoutesConstant.main: (_) => MultiBlocProvider(providers: [
+          BlocProvider(
+            create: (_) => kiwiContainer.resolve<MainBloc>(),
+          ),
           BlocProvider(
             create: (_) =>
                 kiwiContainer.resolve<HomeBloc>()..add(HomeEventShowUser()),
