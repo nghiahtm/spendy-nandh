@@ -8,6 +8,7 @@ import 'package:spendytracking/domain/repositories/auth_repository_impl.dart';
 import 'package:spendytracking/domain/usecases/auth_usecase.dart';
 import 'package:spendytracking/presentation/home/bloc/home_bloc.dart';
 import 'package:spendytracking/presentation/login/bloc/login_bloc.dart';
+import 'package:spendytracking/presentation/main/bloc/main_bloc.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_bloc.dart';
 
 final kiwiContainer = KiwiContainer();
@@ -45,4 +46,6 @@ void _bloc() {
       (_) => LoginBloc(authUseCase: kiwiContainer.resolve<AuthUseCase>()));
   kiwiContainer.registerSingleton<HomeBloc>(
           (_) => HomeBloc(authUseCase: kiwiContainer.resolve<AuthUseCase>()));
+  kiwiContainer.registerSingleton<MainBloc>(
+          (_) => MainBloc());
 }

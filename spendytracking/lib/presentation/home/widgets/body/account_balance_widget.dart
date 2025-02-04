@@ -25,7 +25,7 @@ class AccountBalanceWidget extends StatelessWidget {
             "Account Balance",
             style: AppTextStyle.normal.copyWith(color: AppColors.grey),
           ),
-          Text("9400\$",
+          Text("0",
               style: AppTextStyle.heading1.copyWith(color: AppColors.black)),
           const SizedBox(
             height: 27,
