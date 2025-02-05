@@ -8,6 +8,6 @@ class MainBloc extends Bloc<MainEvent, MainState>{
   }
 
   void onChangeTab(ChangeTabNavigation event, Emitter<MainState> emit) {
-    emit(InitialMainState(indexTab: event.index));
+    emit(ChangingTabState(indexTab: event.index));
   }
 }

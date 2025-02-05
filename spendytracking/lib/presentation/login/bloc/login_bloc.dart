@@ -16,6 +16,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(LoginError(error: result));
       return;
     }
+    emit(LoginLoading());
+    final stateUser = await authUseCase.addUser();
+    if (stateUser != null && stateUser.isNotEmpty) {
+      emit(LoginError(error: stateUser));
+      return;
+    }
+    final stateUserLocal = await authUseCase.setUserId();
+    if(stateUserLocal != null){
+      return emit(LoginError(error: stateUserLocal));
+    }
     emit(LoginSuccess());
   }
 }

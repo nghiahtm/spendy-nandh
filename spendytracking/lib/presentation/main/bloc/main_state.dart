@@ -15,7 +15,7 @@ class InitialMainState extends MainState {
 class ChangingTabState extends MainState {
   final int indexTab;
 
-  ChangingTabState({ this.indexTab = 1});
+  ChangingTabState({this.indexTab = 1});
 
   @override
   // TODO: implement props
