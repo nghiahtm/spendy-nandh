@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:spendytracking/core/di.dart';
 import 'package:spendytracking/presentation/login/bloc/login_bloc.dart';
 import 'package:spendytracking/presentation/login/bloc/login_event.dart';
@@ -27,7 +28,12 @@ class LoginPage extends StatelessWidget {
       ),
       body: BlocListener<LoginBloc, LoginState>(
         listener: (BuildContext context, LoginState state) {
+          if (state is LoginLoading) {
+            EasyLoading.show(status: 'Loading...', dismissOnTap: true);
+            return;
+          }
           if (state is LoginSuccess) {
+            EasyLoading.dismiss();
             Navigator.pushNamedAndRemoveUntil(
                 context, RoutesConstant.main, (_) => false);
             return;

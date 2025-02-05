@@ -1,16 +1,9 @@
 import 'package:equatable/equatable.dart';
 
-sealed class SplashEvent extends Equatable{
-}
+sealed class SplashEvent extends Equatable {}
 
-final class SplashNavigate extends SplashEvent {
-  final String? userJson;
-  SplashNavigate({this.userJson});
-
+class SplashNavigate extends SplashEvent {
   @override
   // TODO: implement props
-  List<Object?> get props => [userJson];
-
+  List<Object?> get props => [];
 }
-
-
