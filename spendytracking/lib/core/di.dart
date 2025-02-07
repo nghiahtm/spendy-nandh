@@ -41,6 +41,11 @@ void _data() {
   kiwiContainer.registerSingleton<UserSharePref>((_) => UserSharePref(
         sharedPrefHelper: kiwiContainer.resolve<SharedPrefHelper>(),
       ));
+  kiwiContainer
+      .registerSingleton<UserInformationFirestore>((_) => UserInformationFirestore(
+            firebaseFireStoreHelper:
+                kiwiContainer.resolve<FirebaseFireStoreHelper>(),
+          ));
 }
 
 void _repositories() {
@@ -48,6 +53,7 @@ void _repositories() {
       firebaseFireStoreHelper: kiwiContainer.resolve<FirebaseFireStoreHelper>(),
       googleAuthHelper: kiwiContainer.resolve<GoogleAuthHelper>(),
       userRemoteFireStore: kiwiContainer.resolve<UserRemoteFireStore>(),
+      userInformationFirestore: kiwiContainer.resolve<UserInformationFirestore>(),
       userSharePref: kiwiContainer.resolve<UserSharePref>()));
 }
 

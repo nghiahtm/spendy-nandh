@@ -13,12 +13,14 @@ class AuthRepositoryImpl extends AuthRepository {
   final GoogleAuthHelper googleAuthHelper;
   final UserRemoteFireStore userRemoteFireStore;
   final UserSharePref userSharePref;
+  final UserInformationFirestore userInformationFirestore;
 
   AuthRepositoryImpl(
       {required this.firebaseFireStoreHelper,
       required this.googleAuthHelper,
-        required this.userSharePref,
-      required this.userRemoteFireStore});
+      required this.userSharePref,
+      required this.userRemoteFireStore,
+      required this.userInformationFirestore});
 
   @override
   Future<GoogleSignInAuthentication?> login() async {
@@ -54,5 +56,15 @@ class AuthRepositoryImpl extends AuthRepository {
   @override
   Future<String?> getIdUserLocal() {
     return userSharePref.getUserLocal();
+  }
+
+  @override
+  Future<bool> isUserInFireStore(String id) {
+    return userInformationFirestore.isUserExist(id);
+  }
+
+  @override
+  UserModel? getUserFromFirestore() {
+    return userInformationFirestore.getUser();
   }
 }

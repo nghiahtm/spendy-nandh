@@ -24,7 +24,7 @@ class AuthUseCase {
       userModel = user.userModel;
       return null;
     } on PlatformException catch (e) {
-      return "Not Log in";
+      return "Exception Platform";
     }
   }
 
@@ -46,11 +46,25 @@ class AuthUseCase {
     return id;
   }
 
-  Future<String?> setUserId() async {
+  Future<String?> setUserIdLocal() async {
     if (userModel == null ||
         userModel!.userId == null ||
         userModel!.userId!.isEmpty) return "Not Found User";
     await authRepository.addUserLocal(userModel!.userId!);
     return null;
+  }
+
+  Future<String> getStateUserStillOnFirestore() async {
+    if (userModel == null ||
+        userModel?.userId == null ||
+        userModel!.userId!.isEmpty) {
+      return "Not Found User";
+    }
+    final isExisted =
+        await authRepository.isUserInFireStore(userModel!.userId!);
+    if (!isExisted) return "Not Existed";
+    userModel = authRepository.getUserFromFirestore();
+    await setUserIdLocal();
+    return "Success";
   }
 }

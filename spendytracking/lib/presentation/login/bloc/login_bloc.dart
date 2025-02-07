@@ -17,14 +17,26 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       return;
     }
     emit(LoginLoading());
+    /// CHECK USER STILL IN FIRESTORE
+    final stateUserExistedFirestore = await authUseCase.getStateUserStillOnFirestore();
+    if(stateUserExistedFirestore.contains("Not Found User")){
+      emit(LoginError(error: stateUserExistedFirestore));
+      return;
+    }
+    if(stateUserExistedFirestore.contains("Success")){
+      emit(LoginSuccess());
+      return;
+    }
+    /// ADD USER To Firestore
     final stateUser = await authUseCase.addUser();
     if (stateUser != null && stateUser.isNotEmpty) {
       emit(LoginError(error: stateUser));
       return;
     }
-    final stateUserLocal = await authUseCase.setUserId();
+    final stateUserLocal = await authUseCase.setUserIdLocal();
     if(stateUserLocal != null){
-      return emit(LoginError(error: stateUserLocal));
+      emit(LoginError(error: stateUserLocal));
+      return;
     }
     emit(LoginSuccess());
   }
