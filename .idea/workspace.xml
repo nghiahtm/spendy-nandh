@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc132e97-1a55-48d6-8fbf-742780756b82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spendytracking/lib/presentation/home/bloc/home_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spendytracking/lib/presentation/home/bloc/home_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spendytracking/lib/presentation/home/bloc/home_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spendytracking/lib/presentation/home/home_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spendytracking/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spendytracking/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spendytracking/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/core/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/core/di.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/data/data/remote/user_remote_fire_store.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/data/data/remote/user_remote_fire_store.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/data/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/data/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/data/repositories/auth_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/data/repositories/auth_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/domain/repositories/auth_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/domain/repositories/auth_repository_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/domain/usecases/auth_usecase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/domain/usecases/auth_usecase.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +24,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2rbWJRcvhaDn1pLalhr5Lde7KiZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,9 +40,10 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "nghia/feature/setup",
+    "git-widget-placeholder": "nghia/feature/checking__user__in__db",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/htmn/spendy-nandh",
+    "settings.editor.selected.configurable": "flutter.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
