@@ -4,6 +4,7 @@ import 'package:spendytracking/data/models/user_model.dart';
 import 'package:spendytracking/data/repositories/auth_repository.dart';
 import 'package:spendytracking/utils/extensions/user_firebase_extension.dart';
 
+
 class AuthUseCase {
   final AuthRepository authRepository;
 
@@ -28,10 +29,10 @@ class AuthUseCase {
     }
   }
 
-  Future<String?> addUser() async {
+  Future<String?> addUserToFirestore() async {
     try {
       if (userModel == null) return "Not Found";
-      authRepository.addUser(userModel!);
+      await authRepository.addUserToFirestore(userModel!);
       return null;
     } on FirebaseException catch (e) {
       return e.message;
@@ -47,9 +48,7 @@ class AuthUseCase {
   }
 
   Future<String?> setUserIdLocal() async {
-    if (userModel == null ||
-        userModel!.userId == null ||
-        userModel!.userId!.isEmpty) return "Not Found User";
+    if(isUserNull().isNotEmpty ) return isUserNull();
     await authRepository.addUserLocal(userModel!.userId!);
     return null;
   }
@@ -65,6 +64,13 @@ class AuthUseCase {
     if (!isExisted) return "Not Existed";
     userModel = authRepository.getUserFromFirestore();
     await setUserIdLocal();
-    return "Success";
+    return "";
+  }
+
+  String isUserNull (){
+    if (userModel == null ||
+        userModel!.userId == null ||
+        userModel!.userId!.isEmpty) return "Not Found User";
+    return "";
   }
 }

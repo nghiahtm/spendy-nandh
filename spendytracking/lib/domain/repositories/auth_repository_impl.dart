@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:spendytracking/core/helpers/remote/firebase_helper.dart';
 import 'package:spendytracking/core/helpers/remote/google_auth_helper.dart';
+import 'package:spendytracking/data/data/local/user_local_sqflite.dart';
 import 'package:spendytracking/data/data/local/user_share_pref.dart';
 import 'package:spendytracking/data/data/remote/user_remote_fire_store.dart';
 import 'package:spendytracking/data/models/user_model.dart';
@@ -14,13 +15,15 @@ class AuthRepositoryImpl extends AuthRepository {
   final UserRemoteFireStore userRemoteFireStore;
   final UserSharePref userSharePref;
   final UserInformationFirestore userInformationFirestore;
+  final UserSqflite userSqflite;
 
   AuthRepositoryImpl(
       {required this.firebaseFireStoreHelper,
       required this.googleAuthHelper,
       required this.userSharePref,
       required this.userRemoteFireStore,
-      required this.userInformationFirestore});
+      required this.userInformationFirestore,
+      required this.userSqflite});
 
   @override
   Future<GoogleSignInAuthentication?> login() async {
@@ -46,7 +49,8 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<void> addUser(UserModel user) => userRemoteFireStore.addUser(user);
+  Future<void> addUserToFirestore(UserModel user) =>
+      userRemoteFireStore.addUser(user);
 
   @override
   Future<void> addUserLocal(String id) {
@@ -66,5 +70,30 @@ class AuthRepositoryImpl extends AuthRepository {
   @override
   UserModel? getUserFromFirestore() {
     return userInformationFirestore.getUser();
+  }
+
+  @override
+  Future<void> createTableUser() {
+    return userSqflite.createUser();
+  }
+
+  @override
+  Future<UserModel?> getUserFromSqflite(int idLocal) {
+    return userSqflite.getUser(idLocal);
+  }
+
+  @override
+  Future<int> insertUserSqflite(UserModel user) {
+    return userSqflite.insertUser(user);
+  }
+
+  @override
+  Future<int?> getIntIdUserLocal() {
+    return userSharePref.getIdLocal();
+  }
+
+  @override
+  Future<void> setIntIdUserLocal(int id) {
+    return userSharePref.setIDLocal(id);
   }
 }
