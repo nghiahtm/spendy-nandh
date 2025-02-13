@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_bloc.dart';
-import 'package:spendytracking/presentation/splash/bloc/splash_event.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_state.dart';
 import 'package:spendytracking/routes/routes.dart';
 import 'package:spendytracking/styles/app_text_style.dart';

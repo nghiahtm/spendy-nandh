@@ -18,4 +18,12 @@ class SharedPrefHelper {
   Future<void> removeUserId(String value) async {
     asyncPrefs.remove(KeySharedPrefHelperConstant.kUser);
   }
+
+  Future<void> setIntIdLocal(int value) {
+    return asyncPrefs.setInt(KeySharedPrefHelperConstant.kUser,value);
+  }
+
+  Future<int?> getIdLocal() {
+    return asyncPrefs.getInt(KeySharedPrefHelperConstant.kUser);
+  }
 }

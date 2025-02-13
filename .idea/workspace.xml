@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc132e97-1a55-48d6-8fbf-742780756b82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spendytracking/lib/presentation/home/bloc/home_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spendytracking/lib/presentation/home/bloc/home_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spendytracking/lib/presentation/home/bloc/home_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spendytracking/lib/presentation/home/home_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spendytracking/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/main.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spendytracking/lib/core/helpers/local/sqflite_helper.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spendytracking/lib/data/data/local/user_local_sqflite.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/core/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/core/di.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/core/helpers/local/sqlite_helper.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/data/models/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/data/models/user_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/domain/usecases/auth_usecase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/domain/usecases/auth_usecase.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spendytracking/lib/utils/extensions/user_firebase_extension.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/lib/utils/extensions/user_firebase_extension.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spendytracking/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spendytracking/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/spendytracking/pubspec.yaml" afterDir="false" />
     </list>
@@ -21,31 +25,52 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2rbWJRcvhaDn1pLalhr5Lde7KiZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "nghia/feature/setup",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/htmn/spendy-nandh",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;nghia/feature/save__user__db&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/htmn/spendy-nandh&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/spendytracking/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter.main.dart" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
