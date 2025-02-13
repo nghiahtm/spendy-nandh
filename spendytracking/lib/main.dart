@@ -8,7 +8,7 @@ import 'my_app.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  setupContainer();
+  await setupContainer();
   runApp(const MyApp());
   AppLoading.configLoading();
 }

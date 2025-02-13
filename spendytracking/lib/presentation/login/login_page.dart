@@ -32,8 +32,8 @@ class LoginPage extends StatelessWidget {
             EasyLoading.show(status: 'Loading...', dismissOnTap: true);
             return;
           }
+          EasyLoading.dismiss();
           if (state is LoginSuccess) {
-            EasyLoading.dismiss();
             Navigator.pushNamedAndRemoveUntil(
                 context, RoutesConstant.main, (_) => false);
             return;
