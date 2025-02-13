@@ -8,6 +8,7 @@ import 'package:spendytracking/presentation/login/bloc/login_bloc.dart';
 import 'package:spendytracking/presentation/login/login_page.dart';
 import 'package:spendytracking/presentation/main/bloc/main_bloc.dart';
 import 'package:spendytracking/presentation/main/main_page.dart';
+import 'package:spendytracking/presentation/profile/bloc/profile_bloc.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_bloc.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_event.dart';
 import 'package:spendytracking/presentation/splash/splash_page.dart';
@@ -37,7 +38,11 @@ class AppRoutes {
           BlocProvider(
             create: (_) =>
                 kiwiContainer.resolve<HomeBloc>()..add(HomeEventShowUser()),
+          ),
+          BlocProvider(
+            create: (_) =>
+                kiwiContainer.resolve<ProfileBloc>(),
           )
-        ], child: const MainPage()),
+        ], child: MainPage()),
   };
 }

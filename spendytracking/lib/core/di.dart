@@ -9,6 +9,7 @@ import 'package:spendytracking/domain/usecases/auth_usecase.dart';
 import 'package:spendytracking/presentation/home/bloc/home_bloc.dart';
 import 'package:spendytracking/presentation/login/bloc/login_bloc.dart';
 import 'package:spendytracking/presentation/main/bloc/main_bloc.dart';
+import 'package:spendytracking/presentation/profile/bloc/profile_bloc.dart';
 import 'package:spendytracking/presentation/splash/bloc/splash_bloc.dart';
 
 import 'helpers/remote/firebase_helper.dart';
@@ -64,4 +65,5 @@ void _bloc() {
   kiwiContainer.registerSingleton<HomeBloc>(
       (_) => HomeBloc(authUseCase: kiwiContainer.resolve<AuthUseCase>()));
   kiwiContainer.registerSingleton<MainBloc>((_) => MainBloc());
+  kiwiContainer.registerSingleton<ProfileBloc>((_) => ProfileBloc(authUseCase: kiwiContainer.resolve<AuthUseCase>()));
 }

@@ -53,4 +53,9 @@ class AuthUseCase {
     await authRepository.addUserLocal(userModel!.userId!);
     return null;
   }
+
+  Future<dynamic> logout() async {
+    await authRepository.logout();
+    return null;
+  }
 }
