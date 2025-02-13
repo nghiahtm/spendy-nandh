@@ -17,7 +17,7 @@ main() {
       when(mockAuthRepository.getIntIdUserLocal()).thenAnswer((_) async {
         return 0;
       });
-      expect(await mockAuthRepository.getIntIdUserLocal(), isA<String>());
+      expect(await mockAuthRepository.getIntIdUserLocal(), isA<int>());
       expect(await mockAuthRepository.getIntIdUserLocal(), equals(0));
       expect(await mockAuthRepository.getIntIdUserLocal(), isNotNull);
     });
