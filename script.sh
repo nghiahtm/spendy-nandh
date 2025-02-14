@@ -2,6 +2,12 @@
 
 set -e
 
+echo "🚀 Cài đặt Firebase CLI..."
+npm install -g firebase-tools
+
+echo "🚀 Kiểm tra phiên bản Firebase CLI..."
+firebase --version  # Kiểm tra Firebase CLI đã được cài chưa
+
 echo "🚀 Bắt đầu quá trình Build & Deploy tới thiết bị test..."
 
 echo "📌 Cài đặt dependencies..."
