@@ -23,14 +23,18 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: flutter clean
-      - run: flutter pub get
-      - run: dart run build_runner build --delete-conflicting-outputs
-      - run: flutter test
-      - run: flutter build apk --release --split-per-abi
       - name: Create a Release APK
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/release/*.apk"
           token: ${{ secrets.TOKEN }}
           tag: v1.0.${{ github.run_number }}
+
+      - name: Make script executable
+        run: chmod +x script.sh
+
+      - name: Run Firebase Release Script
+        env:
+          FIREBASE_APP_ID_ANDROID: ${{ secrets.FIREBASE_APP_ID_ANDROID }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: ./script.sh
