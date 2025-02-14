@@ -20,7 +20,7 @@ flutter test
 echo "📌 Build APK (Android)..."
 flutter build apk --release
 echo "📌 Upload APK lên Firebase App Distribution..."
-firebase appdistribution:distribute build/app/outputs/apk/debug/app-release.apk \
+firebase appdistribution:distribute build/app/outputs/apk/release/app-release.apk \
   --app $FIREBASE_APP_ID_ANDROID \
   --token "$FIREBASE_TOKEN" \
   --groups test-1
