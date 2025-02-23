@@ -16,6 +16,8 @@ class RoutesConstant {
   static const String init = "/";
   static const String login = "/login";
   static const String main = "/main";
+  static const String inputDeposit = "/input_deposit";
+  static const String outputDeposit = "/output_deposit";
 }
 
 class AppRoutes {
