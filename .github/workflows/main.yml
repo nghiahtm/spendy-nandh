@@ -7,7 +7,7 @@ on:
       - dev-v2
 jobs:
   build:
-    name: Build APK
+    name: Build app
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,6 +15,29 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17.x'
+      - name: Cache Flutter Dependencies
+        uses: actions/cache@v3
+        with:
+            path: ~/.pub-cache
+            key: flutter-deps-${{ runner.os }}-${{ hashFiles('pubspec.yaml') }}
+            restore-keys: |
+              flutter-deps-${{ runner.os }}-
+      - name: Cache Gradle Build (Android)
+        uses: actions/cache@v3
+        with:
+            path: |
+              ~/.gradle/caches
+              ~/.gradle/wrapper
+            key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+            restore-keys: |
+              gradle-${{ runner.os }}-
+      - name: Cache CocoaPods (iOS)
+        uses: actions/cache@v3
+        with:
+            path: ios/Pods
+            key: pods-${{ runner.os }}-${{ hashFiles('ios/Podfile.lock') }}
+            restore-keys: |
+              pods-${{ runner.os }}-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
