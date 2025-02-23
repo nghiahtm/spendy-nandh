@@ -7,21 +7,26 @@ class AppButton extends StatelessWidget {
       required this.onPressed,
       this.child,
       this.backgroundColor,
-      this.rounderBorder});
+      this.rounderBorder, this.shape, this.miniSize});
   final Function() onPressed;
   final Widget? child;
   final Color? backgroundColor;
   final double? rounderBorder;
+  final OutlinedBorder? shape;
+  final Size? miniSize;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
+      style:ElevatedButton.styleFrom(
           backgroundColor: backgroundColor ?? AppColors.violet100,
-          shape: RoundedRectangleBorder(
+          shape:shape??  RoundedRectangleBorder(
             borderRadius:
-                BorderRadius.circular(rounderBorder ?? 12), // <-- Radius
-          )),
+                BorderRadius.circular(rounderBorder ?? 12),
+          ),
+        minimumSize: miniSize,
+      ),
       child: child ?? const SizedBox(),
     );
   }

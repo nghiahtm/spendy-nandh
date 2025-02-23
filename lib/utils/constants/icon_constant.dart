@@ -8,4 +8,5 @@ class IconConstant {
   static const String icProfile = "$routesIcon/profile.svg";
   static const String icInputDeposit = "$routesIcon/input_deposit.svg";
   static const String icOutputDeposit = "$routesIcon/output_deposit.svg";
+  static const String icAdd = "$routesIcon/add.svg";
 }

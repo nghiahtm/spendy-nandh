@@ -50,6 +50,7 @@ dependencies:
   curved_navigation_bar: ^1.0.6
   mockito:
   path: ^1.9.0
+  advance_math:
 
 dev_dependencies:
   flutter_test:

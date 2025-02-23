@@ -60,6 +60,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '76346424584',
     projectId: 'spendy-nandh',
     storageBucket: 'spendy-nandh.firebasestorage.app',
+    androidClientId: '76346424584-lmqcrnthh5f41bkcl3iruemjj19s0662.apps.googleusercontent.com',
+    iosClientId: '76346424584-f2ohdt620pkup0nqsk78aoqi5jc0c5q5.apps.googleusercontent.com',
     iosBundleId: 'com.example.spendytracking',
   );
 
@@ -69,6 +71,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '76346424584',
     projectId: 'spendy-nandh',
     storageBucket: 'spendy-nandh.firebasestorage.app',
+    androidClientId: '76346424584-lmqcrnthh5f41bkcl3iruemjj19s0662.apps.googleusercontent.com',
+    iosClientId: '76346424584-f2ohdt620pkup0nqsk78aoqi5jc0c5q5.apps.googleusercontent.com',
     iosBundleId: 'com.example.spendytracking',
   );
+
 }

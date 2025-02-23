@@ -13,6 +13,9 @@ echo "🚀 Bắt đầu quá trình Build & Deploy tới thiết bị test..."
 echo "📌 Cài đặt dependencies..."
 flutter pub get
 
+echo "📌 Cài đặt build runner..."
+dart run build_runner build --delete-conflicting-outputs
+
 echo "📌 Chạy unit test..."
 flutter test
 
