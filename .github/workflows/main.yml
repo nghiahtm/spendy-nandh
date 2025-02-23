@@ -1,0 +1,59 @@
+name: Flutter_CI
+
+# Controls when the workflow will run
+on:
+  push:
+    branches:
+      - dev-v2
+jobs:
+  build:
+    name: Build app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17.x'
+      - name: Cache Flutter Dependencies
+        uses: actions/cache@v3
+        with:
+            path: ~/.pub-cache
+            key: flutter-deps-${{ runner.os }}-${{ hashFiles('pubspec.yaml') }}
+            restore-keys: |
+              flutter-deps-${{ runner.os }}-
+      - name: Cache Gradle Build (Android)
+        uses: actions/cache@v3
+        with:
+            path: |
+              ~/.gradle/caches
+              ~/.gradle/wrapper
+            key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+            restore-keys: |
+              gradle-${{ runner.os }}-
+      - name: Cache CocoaPods (iOS)
+        uses: actions/cache@v3
+        with:
+            path: ios/Pods
+            key: pods-${{ runner.os }}-${{ hashFiles('ios/Podfile.lock') }}
+            restore-keys: |
+              pods-${{ runner.os }}-
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - name: Create a Release APK
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/release/*.apk"
+          token: ${{ secrets.TOKEN }}
+          tag: v1.0.${{ github.run_number }}
+
+      - name: Make script executable
+        run: chmod +x script.sh
+
+      - name: Run Firebase Release Script
+        env:
+          FIREBASE_APP_ID_ANDROID: ${{ secrets.FIREBASE_APP_ID_ANDROID }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: ./script.sh

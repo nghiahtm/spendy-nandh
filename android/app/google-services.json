@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "76346424584",
+    "project_id": "spendy-nandh",
+    "storage_bucket": "spendy-nandh.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76346424584:android:d3d3d9ddd6eff8745140bd",
+        "android_client_info": {
+          "package_name": "com.example.spendytracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76346424584-lmqcrnthh5f41bkcl3iruemjj19s0662.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.spendytracking",
+            "certificate_hash": "d10e2fc6adf28144321dc6825aaa2cbe88905ff6"
+          }
+        },
+        {
+          "client_id": "76346424584-71jdlpso893u6ceom93pihceds1jn88h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXhWv3KiLIrAs9zSlPW6Vme4OKm6VwQUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76346424584-71jdlpso893u6ceom93pihceds1jn88h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "76346424584-f2ohdt620pkup0nqsk78aoqi5jc0c5q5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.spendytracking"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
