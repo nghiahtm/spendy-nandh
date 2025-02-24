@@ -4,6 +4,7 @@ import 'package:spendytracking/core/di.dart';
 import 'package:spendytracking/presentation/home/bloc/home_bloc.dart';
 import 'package:spendytracking/presentation/home/bloc/home_event.dart';
 import 'package:spendytracking/presentation/home/home_page.dart';
+import 'package:spendytracking/presentation/input_n_expense/input_n_expense_page.dart';
 import 'package:spendytracking/presentation/login/bloc/login_bloc.dart';
 import 'package:spendytracking/presentation/login/login_page.dart';
 import 'package:spendytracking/presentation/main/bloc/main_bloc.dart';
@@ -16,8 +17,7 @@ class RoutesConstant {
   static const String init = "/";
   static const String login = "/login";
   static const String main = "/main";
-  static const String inputDeposit = "/input_deposit";
-  static const String outputDeposit = "/output_deposit";
+  static const String inputAndExpense = "/input_n_expense";
 }
 
 class AppRoutes {
@@ -42,4 +42,19 @@ class AppRoutes {
           )
         ], child: const MainPage()),
   };
+
+  static Route? onGenerateRoute(RouteSettings setting) {
+    switch (setting.name) {
+      case RoutesConstant.inputAndExpense:
+        final args = setting.arguments as Map<String, dynamic>?;
+        final type = args?["type"] as String?;
+        if (type == null || type.isEmpty) {
+          return MaterialPageRoute(builder: (_) => const SizedBox());
+        }
+        return MaterialPageRoute(
+            builder: (_) => InputAndExpensePage(args: type));
+      default:
+        return MaterialPageRoute(builder: (_) => const SizedBox());
+    }
+  }
 }

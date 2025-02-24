@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc132e97-1a55-48d6-8fbf-742780756b82" name="Changes" comment="update button fab">
+      <change afterPath="$PROJECT_DIR$/lib/presentation/input_n_expense/expense/expense_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/input_n_expense/input/income_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/input_n_expense/input_n_expense_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/input_n_expense/widgets/body_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/input_n_expense/widgets/input_money_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/data/local/list_fab_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/data/local/list_fab_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/my_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/my_app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/main/widget/app_fab_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/main/widget/app_fab_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/routes/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes/routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/styles/app_text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/app_text_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/constants/string_constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/constants/string_constants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev-v2" />
+        <entry key="$PROJECT_DIR$" value="dev-v3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,12 +66,13 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "nghia/feature/fab",
+    "git-widget-placeholder": "nghia/feature/input__deposit",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/htmn/spendy-nandh",
     "settings.editor.selected.configurable": "flutter.settings",
-    "show.migrate.to.gradle.popup": "false"
+    "show.migrate.to.gradle.popup": "false",
+    "structure.view.defaults.are.configured": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Flutter.main.dart">
@@ -146,12 +160,36 @@
       <option name="project" value="LOCAL" />
       <updated>1740333837590</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update button fab">
+      <option name="closed" value="true" />
+      <created>1740370743392</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740370743392</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="check" />
     <MESSAGE value="update button fab" />
     <option name="LAST_COMMIT_MESSAGE" value="update button fab" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/core/helpers/local/sqflite_helper.dart</url>
+          <line>31</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/routes/routes.dart</url>
+          <line>25</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

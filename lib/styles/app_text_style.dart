@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:spendytracking/styles/app_colors.dart';
 
 class AppTextStyle {
+
+  static TextStyle size64 = const TextStyle(
+      fontSize: 64,
+      fontWeight: FontWeight.bold,
+      color: AppColors.white
+  );
+
   static TextStyle heading1 = const TextStyle(
     fontSize: 40,
     fontWeight: FontWeight.bold,
@@ -17,6 +24,12 @@ class AppTextStyle {
       fontSize: 18,
       fontWeight: FontWeight.bold,
       color: AppColors.black
+  );
+
+  static TextStyle titleAppBarWhiteColor = const TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: AppColors.white
   );
 
   static TextStyle normal =const  TextStyle(

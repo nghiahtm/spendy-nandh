@@ -1,9 +1,9 @@
-import 'package:advance_math/advance_math.dart' hide Matrix4;
 import 'package:flutter/material.dart';
 import 'package:spendytracking/core/delagate/fab_delegate.dart';
 import 'package:spendytracking/data/data/local/list_fab_data.dart';
 import 'package:spendytracking/presentation/main/widget/app_button_fab.dart';
-import 'package:spendytracking/utils/constants/icon_constant.dart';
+import 'package:spendytracking/routes/routes.dart';
+import 'package:spendytracking/utils/constants/string_constants.dart';
 
 class AppFabWidget extends StatefulWidget {
   const AppFabWidget({super.key});
@@ -58,6 +58,8 @@ class _AppFabWidgetState extends State<AppFabWidget>
                 onPressExpandedFAB: () {
                   isOpen = false;
                   animationController.reverse();
+                  Navigator.pushNamed(context, RoutesConstant.inputAndExpense,
+                      arguments: {"type": e.name});
                 },
                 opacity: opaFABExpanded,
               ))
